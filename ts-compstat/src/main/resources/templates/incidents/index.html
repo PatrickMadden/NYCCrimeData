@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/tslayout}">
+    <body>
+        <main layout:fragment="content" style="width:100%;height:100%;">
+
+            <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/TSPromptDialogs.js}"></script>
+            <script type="text/javascript" th:src="@{/javascript/headermenu.js}"></script>
+            <script type="text/javascript" th:src="@{/javascript/NYPDShootingIncidents.js}"></script>
+            <script type="text/javascript" th:src="@{/javascript/HistogramTreeCellRenderer.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/tsperspectives.nocache.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/dojo/dojo/dojo.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/TSHovering.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/TSButtonTooltip.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/highstock.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/TSChart.js}"></script>
+
+
+<!--            <nav>-->
+<!--                <div class="nav nav-tabs" id="nav-tab2" role="tablist">-->
+<!--                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>-->
+<!--                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>-->
+<!--                    <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>-->
+<!--                </div>-->
+<!--            </nav>-->
+<!--            <div class="tab-content" id="nav-tabContent">-->
+<!--                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>-->
+<!--                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>-->
+<!--                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>-->
+<!--            </div>-->
+
+            <div id="fullHeightMinusHeaderFooter">
+                <div id="tsMainContentDivID" style="width:100%;height:100%;"></div>
+            </div>
+
+
+<!--            <div id="fullHeightMinusHeaderFooter">-->
+
+<!--                <div role="tabpanel">-->
+<!--                    <nav>-->
+<!--                        <div class="nav nav-tabs" id="nav-tab" role="tablist">-->
+<!--                            <a class="nav-link active" id="incidents-tab" data-toggle="tab" href="#incidents" role="tab" aria-controls="incidents" aria-selected="true">Incidents</a>-->
+<!--                            <a class="nav-link" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false">Dashboard</a>-->
+<!--                        </div>-->
+<!--                    </nav>-->
+
+<!--                    <div class="tab-content" id="myTabContent" style="height:100%">-->
+<!--                        <div class="tab-pane fade show active" id="incidents" role="tabpanel" aria-labelledby="incidents-tab" style="height:100%">-->
+<!--                            <div id="tsMainContentDivID" style="width:100%;height:100%;"></div>-->
+<!--                        </div>-->
+<!--                        <div class="tab-pane fade" id="dashboard" role="tabpanel" area-lablledby="dashboard-tab" style="height:100%">-->
+<!--                            <div style="height:100%">-->
+<!--                                <div class="row" style="height:50%">-->
+<!--                                    <div class="col-sm">-->
+<!--                                        <div id="perpGenderChartViewID" style="height:100%"></div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-sm">-->
+<!--                                        <div id="perpRaceChartViewID" style="height:100%"></div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-sm">-->
+<!--                                        <div id="perpAgeGroupChartViewID" style="height:100%"></div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-sm">-->
+<!--                                        <div id="PerpetratorTableID" style="height:100%"></div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <script type="text/javascript">-->
+
+
+<!--                $(document).ready(function()-->
+<!--                {-->
+<!--                    // $('[href=#dashboard]').on('shown.bs.tab', function (e) {-->
+<!--                    //     alert("Dashboard tab shown");-->
+<!--                    // });-->
+<!--                    //-->
+<!--                    //-->
+<!--                    // $('[href=#tab1]').on('shown.bs.tab', function (e) {-->
+<!--                    //     console.log("tab1");-->
+<!--                    // });-->
+
+<!--                    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {-->
+<!--                        alert(e.target.href);-->
+<!--                    })-->
+
+<!--                });-->
+<!--            </script>-->
+        </main>
+    </body>
+</html>

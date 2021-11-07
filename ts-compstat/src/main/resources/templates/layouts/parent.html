@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head th:replace="fragments/header :: main-head"/>
+    <body>
+        <!--/* Fixed-Top Menu */-->
+        <div th:replace="fragments/mainnav :: navbar"/>
+
+        <div class="container-fluid parent-container">
+            <!--/* Order of including scripts is important */-->
+
+            <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+            <script th:src="@{/webjars/popper.js/dist/umd/popper.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+            <script type="text/javascript" language="javascript" th:src="@{/javascript/messaging.js}"></script>
+
+            <!-- <script th:src="@{/webjars/Bootstrap-3-Typeahead/3.1.0/bootstrap3-typeahead.min.js}"></script> -->
+
+            <!-- Success/Fail messages should be displayed in the middle of the pages -->
+            <!--&lt;!&ndash;/* Check for flash attributes added to the request by controllers. */&ndash;&gt;-->
+            <!--<th:block th:if="${message != null}">-->
+            <!--<div th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=#{${message.message}(${#authentication.name})})">&nbsp;</div>-->
+            <!--</th:block>-->
+
+            <!--/* Include page content from templates */-->
+            <div layout:fragment="content">
+                <p>Page content goes here</p>
+            </div>
+
+        </div>
+
+        <div th:replace="modals :: about"/>
+        <div th:insert="~{fragments/footer :: footer}">&copy; 2017 The Static Templates</div>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<body>
+		<footer th:fragment="footer" class="footer">
+			<nav class="navbar fixed-bottom justify-content-center">
+				<small class="copyright"
+				   th:text="#{footer.copyright1} + ' © 2007 - ' +
+					    ${#calendars.year(#calendars.createNow())} + ' ' +
+					     #{footer.copyright2}">
+					&copy; 2017 Tom Sawyer Software. All Rights Reserved.
+				</small>
+			</nav>
+		</footer>
+	</body>
+</html>

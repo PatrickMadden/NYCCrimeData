@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TSX>
+	<functions>
+		<group name="NYPD Functions">
+			<function name="precinctNumberToName" evaluator="com.tomsawyer.nypd.compstat.function.PrecinctNameEvaluator" description="This function converts a precinct Number into a name.">
+				<parameters>
+					<parameter value="precinctNumber" description="Integer precinct number"/>
+				</parameters>
+			</function>
+		</group>
+		<group name="Traverse">
+			<function name="getIncomingNodeProperty" evaluator="com.tomsawyer.function.graph.TSGetIncomingNodePropertyEvaluator" description="">
+				<parameters>
+					<parameter value="edgeType" description="Edge Type"/>
+					<parameter value="nodeType" description="Node Type"/>
+					<parameter value="expression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="getOutgoingNodeProperty" evaluator="com.tomsawyer.function.graph.TSGetOutgoingNodePropertyEvaluator" description="">
+				<parameters>
+					<parameter value="edgeType" description="Edge Type"/>
+					<parameter value="nodeType" description="Node Type"/>
+					<parameter value="expression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="getIncomingNodePropertyList" evaluator="com.tomsawyer.function.graph.TSGetIncomingNodePropertyListEvaluator" description="">
+				<parameters>
+					<parameter value="edgeType" description="Edge Type"/>
+					<parameter value="nodeType" description="Node Type"/>
+					<parameter value="expression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="getOutgoingNodePropertyList" evaluator="com.tomsawyer.function.graph.TSGetOutgoingNodePropertyListEvaluator" description="">
+				<parameters>
+					<parameter value="edgeType" description="Edge Type"/>
+					<parameter value="nodeType" description="Node Type"/>
+					<parameter value="expression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="getNeighborNodeProperty" evaluator="com.tomsawyer.function.graph.TSGetNeighborNodePropertyEvaluator" description="">
+				<parameters>
+					<parameter value="edgeType" description="Edge Type"/>
+					<parameter value="nodeType" description="Node Type"/>
+					<parameter value="expression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="getSourceNodeProperty" evaluator="com.tomsawyer.function.graph.TSGetSourceNodePropertyEvaluator" description="">
+				<parameters>
+					<parameter value="expression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="getSourceNodePropertyOf" evaluator="com.tomsawyer.function.graph.TSGetSourceNodePropertyEvaluator" description="">
+				<parameters>
+					<parameter value="evaluationExpression" description="Expression evaluating to a target. For example, $listItem(listName)."/>
+					<parameter value="expression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="getTargetNodeProperty" evaluator="com.tomsawyer.function.graph.TSGetTargetNodePropertyEvaluator" description="">
+				<parameters>
+					<parameter value="expression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="getTargetNodePropertyOf" evaluator="com.tomsawyer.function.graph.TSGetTargetNodePropertyEvaluator" description="">
+				<parameters>
+					<parameter value="evaluationExpression" description="Expression evaluating to a target. For example, $listItem(listName)."/>
+					<parameter value="propertyExpression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="getIncomingEdgeProperty" evaluator="com.tomsawyer.function.graph.TSGetIncomingEdgePropertyEvaluator" description="">
+				<parameters>
+					<parameter value="edgeType" description="Edge Type"/>
+					<parameter value="expression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="getOutgoingEdgeProperty" evaluator="com.tomsawyer.function.graph.TSGetOutgoingEdgePropertyEvaluator" description="">
+				<parameters>
+					<parameter value="edgeType" description="Edge Type"/>
+					<parameter value="expression" description="Expression"/>
+				</parameters>
+			</function>
+			<function name="degree" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="inDegree" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="outDegree" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+
+			<function name="sourceNodeDegree" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="sourceNodeInDegree" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="sourceNodeOutDegree" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+
+			<function name="targetNodeDegree" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="targetNodeInDegree" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="targetNodeOutDegree" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="edges" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="outEdges" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="inEdges" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="outNodes" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="inNodes" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="edgesOf" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="evaluationExpression" description="Expression evaluating to a target. For example, $listItem(listName)."/>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="outEdgesOf" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="evaluationExpression" description="Expression evaluating to a target. For example, $listItem(listName)."/>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="inEdgesOf" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="evaluationExpression" description="Expression evaluating to a target. For example, $listItem(listName)."/>
+					<parameter value="edgeTypes" optional="true" description="Zero or more Edge types separated by commas."/>
+				</parameters>
+			</function>
+			<function name="getUpstreamNodeProperty" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="upstreamNodeType" description="Upstream Node Type"/>
+					<parameter value="expression" description="Expression"/>
+					<parameter value="path" description="" optional="true"/>
+				</parameters>
+			</function>
+			<function name="getUpstreamNodePropertyOf" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="evaluationExpression" description="Expression evaluating to a target. For example, $listItem(listName)."/>
+					<parameter value="upstreamNodeType" description="Upstream Node Type"/>
+					<parameter value="expression" description="Expression"/>
+					<parameter value="path" description="" optional="true"/>
+				</parameters>
+			</function>
+			<function name="getDownstreamNodeProperty" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="downstreamNodeType" description="Downstream Node Type"/>
+					<parameter value="expression" description="Expression"/>
+					<parameter value="path" description="" optional="true"/>
+				</parameters>
+			</function>
+			<function name="getDownstreamNodePropertyOf" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="evaluationExpression" description="Expression evaluating to a target. For example, $listItem(listName)."/>
+					<parameter value="downstreamNodeType" description="Downstream Node Type"/>
+					<parameter value="expression" description="Expression"/>
+					<parameter value="path" description="" optional="true"/>
+				</parameters>
+			</function>
+			<function name="hasUpstreamNodeType" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="upstreamNodeType" description="Upstream Node Type"/>
+					<parameter value="path" description="" optional="true"/>
+				</parameters>
+			</function>
+			<function name="hasDownstreamNodeType" evaluator="com.tomsawyer.function.graph.TSTraversalEvaluator" description="">
+				<parameters>
+					<parameter value="downstreamNodeType" description="Downstream Node Type"/>
+					<parameter value="path" description="" optional="true"/>
+				</parameters>
+			</function>
+		</group>
+	</functions>
+</TSX>

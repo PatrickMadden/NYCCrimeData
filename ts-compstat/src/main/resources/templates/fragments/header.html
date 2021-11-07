@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="main-head">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="_csrf" th:content="${_csrf.token}"/>
+        <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" th:href="@{/style/popper.css}"/>
+        <link rel="stylesheet" th:href="@{/style/app.css}"/>
+        <link rel="icon" type="image/png" th:href="@{/images/tomsawyer-small.png}"/>
+        <link rel="shortcut icon" th:href="@{/images/favicon.ico}"/>
+        <link rel="apple-touch-icon" th:href="@{/images/tomsawyer-apple-touch.png}"/>
+        <title th:text="${#httpServletRequest.getParameter('pageTitle') != null} ? ${param.pageTitle[0]} : #{header.html.title}">
+            Tom Sawyer Perspectives Application
+        </title>
+    </head>
+    <head th:fragment="tsp-head">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="_csrf" th:content="${_csrf.token}"/>
+        <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" th:href="@{/style/popper.css}"/>
+        <link rel="stylesheet" th:href="@{/tsperspectives/TSWebView.css}"/>
+        <link rel="stylesheet" th:href="@{/tsperspectives/TSPromptDialogs.css}"/>
+        <link rel="stylesheet" th:href="@{/style/app.css}"/>
+        <link rel="icon" type="image/png" th:href="@{/images/tomsawyer-small.png}"/>
+        <link rel="shortcut icon" th:href="@{/images/favicon.ico}"/>
+        <link rel="apple-touch-icon" th:href="@{/images/tomsawyer-apple-touch.png}"/>
+        <title th:text="${#httpServletRequest.getParameter('pageTitle') != null} ? ${param.pageTitle[0]} : #{header.html.title}">
+            Tom Sawyer Perspectives Application
+        </title>
+    </head>
+    <body>
+        <div id="about" class="modal fade" th:fragment="about">
+            <div class="about modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" th:text="#{header.modal.header}">
+                            About Tom Sawyer Software Product
+                        </h5>
+                    </div>
+                    <div class="about-body modal-body text-center">
+                        <img width="172" height="75" th:src="@{/images/tomsawyer-logo-horizontal.svg}"/>
+                        <p class="well">
+                            <span th:text="${@AppProduct.getName()}">Tom Sawyer Graph Database Browser</span><br/>
+                            Version <span
+                                th:text="${@AppProduct.getBuildString()}">0.0</span><br/>
+                            <span th:text="${@AppProduct.getEdition()}">Cloud Native Edition</span><br/>
+                            <br/>
+                            Build <span
+                                th:text="${@AppProduct.getBuildString()}">0.0.0.0000</span><br/>
+                            <br/>
+                            <span th:text="${@AppProduct.getRelease()}">Alpha Release</span><br/>
+                            <span th:text="${@AppProduct.getAvailablity()}">Availability</span><br/>
+                            <span th:text="${@AppProduct.getCertification()}">Certification</span><br/>
+                            <br/>
+                            Copyright &#169; 2007 - <span
+                                th:text="${#calendars.year(#calendars.createNow())}">
+								2017</span><br/>
+                            Tom Sawyer Software<br/>
+                            All rights reserved.
+                        </p>
+                        <a target="_blank" href="http://www.tomsawyer.com/" class="www">
+                            www.tomsawyer.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/tslayout}">
+    <body>
+        <main layout:fragment="content" style="width:100%;height:100%;">
+
+            <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<!--            <script type="text/javascript" th:src="@{/webjars/sockjs-client/dist/sockjs.min.js}"></script>-->
+<!--            <script type="text/javascript" th:src="@{/webjars/stomp-websocket/stomp.min.js}"></script>-->
+            <script type="text/javascript" th:src="@{/tsperspectives/TSPromptDialogs.js}"></script>
+            <!-- Jupyter Integration Functions -->
+<!--            <script type="text/javascript" th:src="@{/javascript/messaging.js}"></script>-->
+            <script type="text/javascript" th:src="@{/javascript/headermenu.js}"></script>
+            <!-- Used for Jupyter integration. -->
+<!--            <script type="text/javascript" th:src="@{/javascript/application.js}"></script>-->
+            <script type="text/javascript" th:src="@{/javascript/NYCCrimeData.js}"></script>
+            <script type="text/javascript" th:src="@{/javascript/HistogramTreeCellRenderer.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/tsperspectives.nocache.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/dojo/dojo/dojo.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/TSHovering.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/TSButtonTooltip.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/highstock.js}"></script>
+            <script type="text/javascript" th:src="@{/tsperspectives/TSChart.js}"></script>
+            <!-- Web Sockets Support -->
+<!--            <script type="text/javascript" th:src="@{/javascript/webSocketUtils.js}"></script>-->
+
+            <div id = "fullHeightMinusHeaderFooter">
+                <div id="tsMainContentDivID"style="width:100%;height:100%;"></div>
+            </div>
+        </main>
+    </body>
+</html>

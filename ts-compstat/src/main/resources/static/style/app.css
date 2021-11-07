@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin-ext');
+
+html
+{
+    font-size: 1em;
+    /*line-height: 1.4;*/
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+html.tsp-html
+{
+    overflow-y: hidden;
+    height: 100%;
+    min-height: 100%;
+}
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body
+{
+    font-family: 'Open Sans', Arial, sans-serif !important;
+    font-size: 12px;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html.tsp-html > body
+{
+    min-height: auto;
+    height: 100%;
+}
+
+#fullHeightMinusHeaderFooter
+{
+    height:-moz-calc(100vh - (55px + 30px));
+    height:-webkit-calc(100vh - (55px + 30px));
+    height:calc(100vh - (55px + 30px));
+    width: 100%;
+}
+
+.container
+{
+    max-width: 1024px;
+}
+
+textarea
+{
+    resize: vertical;
+}
+
+.required,
+.error,
+.error a:-webkit-any-link
+{
+    color: #FF0000;
+}
+
+.centered
+{
+    text-align: center;
+}
+
+/****************************
+Headings
+****************************/
+h1, h2, h3, h4
+{
+    /* Override 20px default top margin set by Bootstrap */
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+h1
+{
+    font-size: 1.92em;
+    font-weight: 500;
+    margin-top: 16px;
+}
+
+h2
+{
+    font-size: 1.6em;
+    font-weight: 500;
+    color: #2e6da4;
+    margin-top: 16px;
+    margin-bottom: 6px;
+}
+
+h3
+{
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+h4
+{
+    font-size: 1.16em;
+    color: #F35549;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+h5
+{
+    font-size: 1.05em;
+    margin-top: 11px;
+    margin-bottom: 6px;
+}
+
+/****************************
+ Inputs and Buttons
+****************************/
+select.custom-select.form-control-sm
+{
+    /* Prevent clipping the select text */
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 12px;
+    height: 28px !important;
+}
+
+.form-control
+{
+    font-size: 12px;
+}
+
+.row.form-group:not(.description-form-group)
+{
+    align-items: center;
+}
+
+.row.form-group:not(.description-form-group) label
+{
+    margin-top: 7px;
+}
+
+.dropdown-item:active
+{
+    background-color: #2e6da4;
+}
+
+.dropdown-item
+{
+    font-size: 12px;
+}
+
+.table-responsive .dropdown
+{
+    position: static;
+}
+
+/* This is for aligning checkbox inputs similar to other input types */
+.checkbox-input
+{
+    width: 1rem;
+    margin-bottom: 5px;
+}
+
+.color-input
+{
+    width: 280px;
+    height: 30px;
+}
+
+.color-row
+{
+    margin-bottom: 0;
+}
+
+.color-row .checkbox-input
+{
+    margin-bottom: 0;
+}
+
+.btn
+{
+    min-width: 70px;
+}
+
+.btn-sm
+{
+    font-size: inherit;
+}
+
+.btn-primary
+{
+    background-color: #2e6da4;
+    border-color: #2e6da4;
+}
+
+.btn-primary:hover,
+.btn-primary:focus
+{
+    background-color: #296293;
+    border-color: #296293;
+}
+
+.disabled,
+button:disabled
+{
+    cursor: not-allowed !important;
+}
+
+a.btn.disabled
+{
+    background: #666;
+    border-color: #666;
+}
+
+/****************************
+ Icons
+****************************/
+.dropdown-toggle .icon.icon-gear
+{
+    opacity: 0.5;
+    max-height: 15px;
+}
+
+/* The dropdown-toggle is wider than the icon */
+.dropdown-toggle:hover .icon.icon-gear
+{
+    opacity: 0.7;
+}
+
+.dropdown-toggle .icon.icon-gear:active,
+.dropdown-toggle .icon.icon-gear.active,
+.dropdown-toggle .icon.icon-gear:focus
+
+{
+    opacity: 1;
+}
+
+/****************************
+ Tables
+****************************/
+.table td,
+.table th
+{
+    vertical-align: middle !important;
+    padding: 5px;
+}
+
+
+/****************************
+ Alert Boxes
+****************************/
+.alert > .close
+{
+    /* Fix for the close button not being middle aligned */
+    line-height: .91;
+}
+
+/****************************
+ Modals
+****************************/
+.modal .modal-header
+{
+    background-color: #f5f5f5;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+
+.modal .modal-header h1
+{
+    color: #2e6da4;
+    font-size: 18px;
+    margin: 0;
+}
+
+/****************************
+Header
+****************************/
+.header,
+.header-menu {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 12px;
+}
+
+.header {
+    padding: 10px 24px 10px 24px;
+
+    display: flex;
+    overflow-x: hidden;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    /* Bottom border of the header area */
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.left,
+.right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header .title {
+    font-weight: 600;
+    font-size: 18px;
+    margin: auto 24px auto 24px;
+    white-space: nowrap;
+}
+
+.header a {
+    color: #252525;
+    outline: none;
+    border: 0;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: #4892CE;
+}
+
+.header .left img {
+    max-height: 34px;
+}
+
+.header svg {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.header .right div {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+}
+
+.header .right div.rightmost {
+    margin-right: 0 !important;
+}
+
+/* Hover over the entire SVG, and not just the area changing the color */
+.header svg:hover .svg-icon {
+    fill: #4892CE;
+}
+
+.svg-icon-blue {
+    fill: #4892CE;
+}
+
+.svg-icon {
+    fill: #252525;
+}
+
+.header-menu {
+    width: 150px;
+    height: auto;
+    font-size: 12px;
+
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-top: 0;
+
+    position: absolute;
+    right: 0;
+
+    padding: 20px;
+
+    z-index: 1050;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Vertically center the contents of the menu item to align the label and the image */
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    cursor: pointer;
+}
+
+/* The Account item is a link, which means it's normally blue this makes it black so it looks like the other items*/
+a.menu-item {
+    color: #212529;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    color: #4892CE;
+}
+
+/* Change the hover color of the SVG within when the entire menu item is hovered over */
+.menu-item:hover > svg .svg-icon {
+    fill: #4892CE;
+}
+
+.menu-item svg {
+    margin-right: 15px;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+/* Reset the bottom margin of the last menu item */
+.menu-item:last-child {
+    margin-bottom: 0;
+}
+
+
+/****************************
+Security pages (login, register, etc.)
+****************************/
+.tssecurity
+{
+    width: 400px;
+    margin: 30px auto;
+    border-radius: 4px;
+    box-shadow: 3px 3px 10px #ddd;
+}
+
+.tssecurity .panel-body
+{
+    text-align: center;
+    padding: 30px 25px 25px 25px;
+}
+
+.tssecurity img
+{
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.tssecurity h2
+{
+    margin: 0 0 30px;
+    color: #336699;
+}
+
+.tssecurity input
+{
+    text-align: center;
+}
+
+.tssecurity .btn-primary
+{
+    background-color: #336699;
+}
+
+
+/****************************
+Copyright / Footer
+****************************/
+.footer
+{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    background-color: #666666;
+    color: #FFFFFF;
+    z-index: 100;
+}
+
+.copyright
+{
+    padding-top: 10px;
+    font-size: 0.7em;
+}
+
+/**************************
+Forms
+ *************************/
+.editAction
+{
+}
+
+.the-legend {
+    border: 0 none;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+}
+
+/****************************
+Security pages (login, register, etc.)
+****************************/
+.login-banner
+{
+    background:
+            url('../images/Perspectives.dark.png')
+            #1875a2
+            right
+            no-repeat;
+    margin-left: -10px;
+    margin-right: -10px;
+    width: calc(100% + 20px); /* Add the extra 20px for the negative margin */
+}
+
+.login-header h1,
+.login-header h2,
+.login-header h3
+{
+    color: #FFF;
+    font-family: 'Lato',Arial,sans-serif;
+    line-height: 120%;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.login-header h1
+{
+    font-size: 32px;
+}
+
+.login-header h2
+{
+    font-size: 20px;
+}
+
+.login-card
+{
+    max-width: 275px;
+    margin: 30px auto;
+    border-radius: 0;
+    box-shadow: 3px 3px 10px #ddd;
+}
+
+.login-card .card-body
+{
+    text-align: center;
+    padding: 30px 25px 25px 25px;
+}
+
+.login-card img
+{
+    max-height: 180px;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.login-card h2
+{
+    margin: 0 0 30px;
+    color: #336699;
+}
+
+.login-card input
+{
+    text-align: center;
+}
+
+.signup-card
+{
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    box-shadow: 3px 3px 10px #ddd;
+}
+
+@media (max-width: 768px)
+{
+    .login-banner
+    {
+        background-position: 65%;
+    }
+
+    .login-header h1,
+    .login-header h2,
+    .login-header h3
+    {
+        text-align: center;
+    }
+}
+
+@media (max-width: 992px)
+{
+    .login-header h1,
+    .login-header h2,
+    .login-header h3
+    {
+        color: #000;
+    }
+}
+
+@media (max-width: 410px)
+{
+    .login-header h1
+    {
+        font-size: 28px;
+    }
+
+    .login-header h2
+    {
+        font-size: 18px;
+    }
+
+    .login-header h3
+    {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 377px)
+{
+    .login-header h1
+    {
+        font-size: 22px;
+    }
+
+    .login-header h2
+    {
+        font-size: 14px;
+    }
+
+    .login-header h3
+    {
+        font-size: 12px;
+    }
+}
+
+/****************************
+Error Pages
+****************************/
+#stackTrace .card
+{
+    max-height: 200px;
+    overflow: auto;
+}
+
+/****************************
+"About" Modal
+****************************/
+.about
+{
+    max-width: 300px;
+    margin: 30px auto;
+}
+
+.about-body img
+{
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+/* Reduce the font size to fit the entire title in one line */
+.about h1.modal-title
+{
+    font-size: 13px;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+    position: fixed;
+    top: 80px;
+    bottom: 30px;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #eee;
+}
+
+/* Sidebar navigation */
+.sidebar {
+    padding-top: 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sidebar .nav {
+    margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+    width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+    margin-left: 0;
+}
+
+.sidebar .nav-link {
+    border-radius: 0;
+}
+
+.login-background {
+    background: linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.3) 0%,
+            rgba(255,255,255,0.3) 100%), url("../images/Perspectives.png") no-repeat;
+}
+
+
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/parent}" th:with="logoOnly=true">
+    <body>
+        <!--
+        <div th:replace="~{fragments/header :: header}">Header</div>
+        -->
+        <div layout:fragment="content">
+        <main class="container">
+            <h1 th:text="${status}">Tom Sawyer Licensing</h1>
+            <h2 th:text="#{error.h2}">The Application has encountered an error.</h2>
+            <p th:if="${url}">
+                <b th:text="#{error.page}">Page:</b>
+                <span th:text="${url}">Page URL</span>
+            </p>
+
+            <p th:if="${timestamp}" id='created'>
+                <b th:text="#{error.occured}">Occurred:</b>
+                <span th:text="${timestamp}">Timestamp</span>
+            </p>
+
+            <p th:if="${status}">
+                <b th:text="#{error.status}">Response Status:</b>
+                <span th:text="${status}">status-code</span>
+                <span th:if="${error}" th:text="'('+${error}+')'">error ...</span>
+            </p>
+
+            <!-- For development and debugging-->
+            <div th:if="${exception}">
+                <p>
+                    <b th:text="#{error.exception}">Exception: </b>
+                    <span th:text="${message} ? ${message} : ${exception.message}"/>
+                </p>
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <p class="panel-title">
+                                <a href="#stackTrace" data-toggle="collapse">
+                                    <b th:text="#{error.stack}">Stack Trace</b>
+                                </a>
+                            </p>
+                        </div>
+                        <div id="stackTrace" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div th:each="item : ${exception.stackTrace}">
+                                    <samp style="word-wrap: break-word"
+                                          th:text="${item}"/>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="fragments/footer :: footer"/>
+        </div>
+    </body>
+</html>

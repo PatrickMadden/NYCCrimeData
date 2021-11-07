@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/parent}" th:with="logoOnly=true">
+    <body>
+        <!--
+        <div th:replace="~{fragments/header :: header}">Header</div>
+        -->
+        <div layout:fragment="content">
+            <main class="container-fluid"
+				style="background:
+					linear-gradient(
+						to bottom,
+						rgba(255,255,255,0.3) 0%,
+						rgba(255,255,255,0.3) 100%),
+					url('images/Perspectives.png') no-repeat;">
+				<div class="row">
+					<div class="col-md-5"
+						 style="color: white; margin-top:100px; text-align: center;">
+						<h1 th:text="#{welcome.h1.text}">Welcome message</h1>
+						<h2 th:text="#{welcome.h2.text}">Powered by label</h2>
+					</div>
+
+					<div class="col-md-7">
+						<div class="panel panel-default tssecurity">
+							<div class="panel-body" style="background:white;">
+								<img th:src="@{#{navbar.brand.logo}}"/>
+								<div th:unless="${register}"
+									 th:if="${param.failed}"
+									 class="alert alert-danger"
+									 th:text="#{login.failed}">
+									Login Failed. Wrong username and/or password.
+								</div>
+								<div th:if="${register}"
+									 class="alert alert-warning">
+							<span th:text="#{login.register.prompt}">
+								Security configuration not found.
+							</span>
+									<a th:href="@{/Security/Register}"
+									   th:text="#{login.register.url}">
+										Click here to register an offline user.
+									</a>
+								</div>
+								<form name="f"
+									  th:action="@{/Security/SignIn}" method="POST">
+									<div class="form-group">
+										<input class="form-control input-sm"
+											   id="email"
+											   type="text"
+											   name="username"
+											   th:placeholder="#{login.input.user}"
+											   value=""/>
+									</div>
+									<div class="form-group">
+										<input class="form-control input-sm"
+											   id="password"
+											   type="password"
+											   th:placeholder="#{login.input.password}"
+											   name="password"/>
+									</div>
+									<div class="form-group">
+										<input class="btn btn-primary btn-sm"
+											   name="submit"
+											   type="submit"
+											   th:value="#{login.input.login}"/>
+									</div>
+									<br/>
+									<div class="form-group">
+										<p style="font-size: 75%">Don't have an account?
+											<a href="signup" th:href="@{/signup}">
+												Sign Up</a>
+										</p>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+                <script th:inline="javascript" type="text/javascript">
+                    /* Fill in modal with content loaded with Ajax */
+                    $(document).ready(function () {
+                        $('#signup').on('click', function (e) {
+                            $("#myModal").modal();
+                            $("#myModalBody").text("");
+                            $.ajax({
+                                url: "signup",
+                                cache: false
+                            }).done(function (html) {
+                                $("#myModalBody").append(html);
+                            });
+                        })
+                    });
+                </script>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+                            </div>
+                            <div class="modal-body" id="myModalBody">Lorem ipsum</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            </main>
+        </div>
+    </body>
+</html>

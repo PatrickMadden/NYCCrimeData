@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/parent}" th:with="logoOnly=true">
+    <body>
+        <!--
+        <div th:replace="~{fragments/header :: header}">Header</div>
+        -->
+        <div layout:fragment="content">
+        <main class="container">
+            <h1 th:text="#{error.404.title}">Page Not Found</h1>
+            <p>
+							<span th:text="#{error.404.body.1}">
+								The page you are looking for is not available.
+							</span>
+                <a th:href="@{/}" th:text="#{error.404.body.url}"></a>
+                <span th:text="#{error.404.body.2}">
+								to find the appropriate page.
+							</span>
+            </p>
+        </main>
+        <footer th:replace="fragments/footer :: footer"/>
+        </div>
+    </body>
+</html>

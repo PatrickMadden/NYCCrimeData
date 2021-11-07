@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/parent}">
+    <body>
+        <div layout:fragment="content" style="width: 100%;height: 100%;">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h3 class="display-4" th:text="#{welcome.h1.text}">Welcome to the Application</h3>
+                    <p class="lead" th:text="#{welcome.lead.text}">This is a proof of concept developed by Tom Sawyer Software.</p>
+                    <hr class="my-4">
+                    <p>It uses Tom Sawyer Perspectives as the engine to display information provided by your data sources.</p>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="http://www.tomsawyer.com" role="button">Learn more</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

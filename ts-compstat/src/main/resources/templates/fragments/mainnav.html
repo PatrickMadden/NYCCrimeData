@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<div class="header" th:fragment="navbar">
+		<div class="left">
+			<a th:href="#{navbar.brand.href}" target="_blank">
+				<img th:src="@{__#{navbar.brand.logo}__}"/>
+			</a>
+			<div class="title" th:text="#{navbar.brand.title}"></div>
+		</div>
+<!--		<div class="right" th:if="${#authorization.expression('isAuthenticated()')}">-->
+        <div class="right">
+
+			<a href="#" th:href="@{/compstat}">
+				<div class="header-link" th:text="#{navbar.compstat.module.text}">
+					NYPD COMPStat
+				</div>
+			</a>
+
+            <a href="#" th:href="@{/incidents}">
+                <div class="header-link" th:text="#{navbar.incidents.module.text}">
+                    NYPD Shooting Incidents
+                </div>
+            </a>
+
+			<div class="rightmost menu-burger">
+				<svg th:replace="fragments/icons :: burger"/>
+			</div>
+		</div>
+	</div>
+	<div class="header-menu hidden" th:fragment="burger-menu">
+		<div class="menu-item" data-toggle="modal" data-target="#about">
+			<svg th:replace="fragments/icons :: about"/>
+			About
+		</div>
+
+		<div class="menu-item" href="#" onclick="$('#logoutForm').submit();">
+			<svg th:replace="fragments/icons :: signout"/>
+			Sign Out
+			<form style="visibility: hidden"
+			      id="logoutForm"
+			      method="post"
+			      action="#"
+			      th:action="@{/Security/Logout}"></form>
+		</div>
+	</div>
+</html>
