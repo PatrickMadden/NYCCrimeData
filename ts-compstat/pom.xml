@@ -275,6 +275,23 @@
 			</properties>
 
 			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>use-academic-license</id>
+			<properties>
+				<ts.lic.protocol>https</ts.lic.protocol>
+				<ts.lic.host>server.licensing.tomsawyer.com</ts.lic.host>
+				<ts.lic.port>443</ts.lic.port>
+				<ts.lic.path>/261S91IJLNZLZ2Q1ZFK9WI54A</ts.lic.path>
+				<ts.lic.url>https://server.licensing.tomsawyer.com/261S91IJLNZLZ2Q1ZFK9WI54A</ts.lic.url>
+				<ts.lic.dev>Academic Program, Evaluation 8177, Tom Sawyer Version 10.0, Development Distribution</ts.lic.dev>
+				<ts.lic.dep>Academic Program, Evaluation 8177, Tom Sawyer Version 10.0, Deployment Distribution</ts.lic.dep>
+			</properties>
+
+			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 		</profile>
